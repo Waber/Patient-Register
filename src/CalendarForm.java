@@ -81,14 +81,28 @@ public class CalendarForm extends JFrame {
         jDatePicker.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(model.getValue());
+                System.out.println(jDatePicker.getJFormattedTextField().getText()); //metoda FormattedTextField umożliwia pobranie daty w formacie RRRR-MM-DD
             }
         });
 
         add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
+                System.out.println("Dodanie wizyty");
+                new addEditVisitForm(0);
+            }
+        });
+        edit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Edycja wizyty");
+            }
+        });
+        remove.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Usunięcie wizyty");
             }
         });
     }
